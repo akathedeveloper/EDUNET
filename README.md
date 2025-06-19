@@ -1,1 +1,1 @@
-# EDUNET
+# EfficientNetV2B2
