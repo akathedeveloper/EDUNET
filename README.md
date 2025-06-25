@@ -21,7 +21,7 @@ This model is trained to recognize and classify the following types of waste:
 ## 🌐 Live Web Demo
 Test the model live without any local installation:
 
-🔗 [Launch on Streamlit Cloud](#)
+🔗 [Launch on Streamlit Cloud](#)  (In progress)
 
 ---
 
