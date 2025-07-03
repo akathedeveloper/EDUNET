@@ -1,13 +1,19 @@
-# 🧠 Smart Waste Classification with EfficientNet & MobileNet
+# 🗑️ Smart Waste Classification with Transfer Learning 🚀
 
-**Status:** 🚧 *In Progress*  
-A deep learning-powered system for classifying waste into recyclable categories using both transfer learning and custom CNN layers. This project explores different architectures (EfficientNetV2 variants, MobileNet) to build an accurate and efficient garbage classifier.  
-Includes an interactive web app built with **Streamlit** for real-time image classification.
+**Status:** ✅ *Deployed*
+
+A deep learning-powered system to automatically classify household waste into **six recyclable categories** using **state-of-the-art transfer learning** with advanced CNN backbones.  
+This project benchmarks **EfficientNetV2** (S, M, B2, L), **EfficientNetB0**, **MobileNetV2**, and **ResNet50** — identifying the best model for real-world deployment.  
+An interactive **Gradio** web app is hosted live on **Hugging Face Spaces** for anyone to test!
+
+![image](https://github.com/user-attachments/assets/75cd0170-f7fe-4234-b748-0f1ce4ff170f)
+
 
 ---
 
-## 🧾 Waste Categories
-This model is trained to recognize and classify the following types of waste:
+## ♻️ Waste Categories
+
+This classifier can recognize:
 
 - 📦 **Cardboard**
 - 🧪 **Glass**
@@ -18,71 +24,52 @@ This model is trained to recognize and classify the following types of waste:
 
 ---
 
-## 🌐 Live Web Demo
-Test the model live without any local installation:
+## 🌐 Live Demo
 
-🔗 [Launch on Streamlit Cloud](#)  (In progress)
+Try it instantly in your browser — no setup needed:  
+👉 [**Launch the Gradio App on Hugging Face Spaces**](https://huggingface.co/spaces/akathedeveloper/Garbage-Classifier)  
 
----
-
-## ✨ Key Features
-
-- **Multi-Model Framework**: Supports EfficientNetV2 (B0–B3), MobileNetV2, and custom CNNs for benchmarking and comparison.
-- **Transfer Learning Integration**: Uses pretrained ImageNet weights for improved generalization and faster training.
-- **Streamlit Web App**: Clean browser-based UI to upload images and get instant predictions.
-- **Performance Visualization**: Plots for training accuracy, loss curves, and evaluation metrics.
-- **Confusion Matrix & Reports**: Detailed analysis using precision, recall, and F1-score per class.
-- **Modular Codebase**: Cleanly organized scripts for training, evaluation, prediction, and UI integration.
-- **Model Persistence**: Save/load top-performing `.keras` models.
-- **Data Augmentation**: Training pipeline includes real-time preprocessing and augmentation.
 
 ---
 
-## 🧰 Tech Stack
+## ✨ Highlights
 
-- **TensorFlow/Keras** – Deep learning framework
-- **EfficientNetV2 / MobileNetV2** – Transfer learning backbones
-- **Custom CNN** – Custom-tailored classification layers
-- **Streamlit** – For building the interactive web interface
-- **scikit-learn** – Evaluation metrics and classification report
-- **Matplotlib & Seaborn** – Visualizing model performance
-- **Python 3.10** – Project language
-- **NumPy & Pandas** – Data preprocessing and manipulation
-- **Jupyter Notebook** – Experimentation and visualization
-
----
-
-## 📈 Model Evaluation
-
-Evaluation outputs include:
-
-- Accuracy and loss metrics across training epochs
-- Confusion matrix on the test set
-- Per-class metrics (precision, recall, F1-score)
+- ✅ **Multiple CNN Backbones**: Benchmarks **EfficientNetV2S**, **EfficientNetV2M**, **EfficientNetV2B2**, **EfficientNetV2L**, **EfficientNetB0**, **MobileNetV2**, and **ResNet50**.
+- 🔬 **Transfer Learning**: Leverages pretrained ImageNet weights for faster convergence and better generalization.
+- ⚖️ **Class Imbalance Handling**: Uses computed class weights to balance the dataset effectively.
+- 📊 **Clear Performance Metrics**: Visualizes training curves, final test accuracy, classification reports, and confusion matrix.
+- 🏆 **Top Model**: **EfficientNetB0** achieved **91.97% test accuracy**, outperforming larger variants while remaining computationally efficient.
+- ☁️ **Deployed on Hugging Face Spaces**: Zero local setup — fully serverless with **Gradio**.
+- 🧩 **Modular Code**: Clean notebooks for data prep, training, evaluation, and deployment.
+- 🖼️ **Sample Predictions**: Visualizations of real test images with predicted vs. true labels.
 
 ---
 
-## 🧩 Architecture Overview
+## 🔢 Final Results
 
-The training pipeline:
+| Model            | Test Accuracy |
+|------------------|----------------|
+| EfficientNetV2S  | 89.16%         |
+| EfficientNetV2M  | 91.57%         |
+| EfficientNetV2B2 | 88.76%         |
+| EfficientNetV2L  | 91.57%         |
+| EfficientNetB0   | 🏆 **91.97%**  |
+| MobileNetV2      | 19.68%         |
+| ResNet50         | 85.54%         |
 
-1. **Feature Extractor**: EfficientNetV2 or MobileNet with frozen base layers
-2. **Custom Head**: Convolutional layers fine-tuned for the waste domain
-3. **Fine-Tuning Phase**: Unfreezing selected layers for improved performance
-4. **Evaluation**: Performance metrics, confusion matrix, and sample predictions
+**Conclusion:**  
+EfficientNetB0 offers the best balance of accuracy and efficiency for this dataset — making it the ideal choice for real-world deployment.
 
 ---
 
-## 🖼 Sample Predictions
+## 📂 Project Structure Githup
 
-Sample outputs demonstrate accurate classification across all six waste categories. Misclassifications are rare and mostly occur between visually similar items (e.g., metal vs glass).
-
----
-
-## 🧪 Getting Started
-
-```bash
-git clone https://github.com/your-username/smart-waste-classification.git
-cd smart-waste-classification
-pip install -r requirements.txt
-streamlit run app.py  # Launch the Streamlit app
+```plaintext
+├── notebooks/           # Jupyter Notebooks: training, evaluation, deployment
+├── README.md            # This file
+```
+## 📂 Project Structure HuggingFace
+```plaintext
+├── models/              # Saved models (.keras)  
+├── gradio_app.py        # Gradio inference script
+├── requirements.txt     # Dependencies
